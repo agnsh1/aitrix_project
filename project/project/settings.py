@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #apps
+    # Dependencies
+    'rest_framework',
+
+    # apps
     'webapp',
 ]
 
@@ -53,6 +56,18 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'project.urls'
+
+
+REST_FRAMEWORK = {
+
+        'DEFAULT_PERMISSION_CLASSES': [
+            'rest_framework.permissions.IsAuthenticated',
+            'rest_framework.permissions.AllowAny',
+        ],
+
+
+}
+
 
 TEMPLATES = [
     {
