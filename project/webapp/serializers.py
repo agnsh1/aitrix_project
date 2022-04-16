@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from project.webapp.models import AdsImages, Ads, Subcategory, Category
+from .models import AdsImages, Ads, Subcategory, Category
 
 
 class AdsImagesSerializers(serializers.ModelSerializer):
@@ -10,11 +10,9 @@ class AdsImagesSerializers(serializers.ModelSerializer):
 
 
 class AdsListSerializer(serializers.ModelSerializer):
-    new_price = serializers.SerializerMethodField()
-
     class Meta:
         model = Ads
-        fields = ('id', 'main_image', 'title', 'price', 'added_at ',)
+        fields = ('id', 'main_image', 'title', 'price',)
 
 
 class AdsDetailSerializer(serializers.ModelSerializer):
@@ -26,8 +24,8 @@ class AdsDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ads
-        fields = ('id', 'main_image', 'title',  'description','price',
-                  'ads_images', 'added_at',)
+        fields = ('id', 'main_image', 'title',  'description', 'price',
+                  'ads_images',)
 
 
 class SubcategorySerializer(serializers.ModelSerializer):

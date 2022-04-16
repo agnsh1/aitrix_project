@@ -16,8 +16,10 @@ class Ads(BaseModel):
         blank=False,
         verbose_name='Наименование товара'
     )
-    added_at = models.DateField(verbose_name='добавлено', blank=True,
-                                )
+    added_at = models.DateField(
+        verbose_name='добавлено',
+        blank=True,
+    )
     price = models.CharField(
         max_length=255,
         null=False, blank=False,
